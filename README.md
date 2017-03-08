@@ -1,7 +1,7 @@
 ## Blog Post #1
 
 ### Our Idea
-For this project, we are looking to find trends in song popularity using data gathered from streaming music services. We want to see when popular songs beging to lose appeal after gaining traction. We will be creating a web application that visualizes a song’s rise in popularity over time and how quickly songs decay. We can then allow users to search by specific songs, artists, or genres.
+For this project, we are looking to find trends in song popularity using data gathered from streaming music services. We want to see when popular songs begin to lose appeal after gaining traction. We will be creating a web application that visualizes a song’s rise in popularity over time and how quickly songs decay. We can then allow users to search by specific songs, artists, or genres.
 
 ### Data
 
@@ -18,7 +18,7 @@ An ER diagram representing our database schema can be found below.
 
 ### Challenges
 
-We had difficulty grabbing song information using Spotify's API. The main issue came from working around Spotify's rate limit for requests. For every song in our database, we needed to make a request to Spotify's API for more data. Unfortunately, their track endpoint only contained basic information for the song's album and artist (excluded genre for the album, release dates, popularity metrics, etc.) We then had to make two additional requests per song to get more information about the album and artist related to the song. To work around Spotify's API rate limiting, we added delays per request, which made the process of gathering data for all 1.4 millions songs take over several hours to complete.
+We had some difficulty grabbing song information using Spotify's API. The main issue came from working around Spotify's rate limit for requests. For every song in our database, we needed to make a request to Spotify's API for more data. Unfortunately, their track endpoint only contained basic information for the song's album and artist (excluded genre for the album, release dates, popularity metrics, etc.) We then had to make two additional requests per song to get more information about the album and artist related to the song. To work around Spotify's API rate limiting, we added delays per request, which made the process of gathering data for all 1.5 millions songs take over several hours to complete.
 
 ### Looking Forward
 
