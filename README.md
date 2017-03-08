@@ -1,37 +1,29 @@
-## Welcome to GitHub Pages
+## Blog Post #1
 
-You can use the [editor on GitHub](https://github.com/wtruong02151/cs1951_final_project_blogs/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### Our Idea
+For this project, we are looking to find trends in song popularity using data gathered from streaming music services. We want to see when popular songs beging to lose appeal after gaining traction. We will be creating a web application that visualizes a song’s rise in popularity over time and how quickly songs decay. We can then allow users to search by specific songs, artists, or genres.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Data
 
-### Markdown
+We are using Spotify's API in conjunction with a dataset from This Is My jam, which was a social media music web site that allowed users to post links to songs they liked listening to on their profiles. These posts are called 'jams'. The dataset from This Is My Jam contains information pertaining to the song tied to a user's jam, including the song name, artist, link to the song, and the song's URI for Spotify's API. The dataset also included when the jam was posted, who it was posted by, how many users liked the post, and the number of followers a user has. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Progress
 
-```markdown
-Syntax highlighted code block
+In the past week, we created our database of song and jam information.  We started with the This Is My Jam dataset, and cleaned the data to only include songs tied to a Spotify URI, which gave us approximately 1.5 million songs to work with. From there, we extracted more information about each song using Spotify's API. The information we gathered includes the song's genres, album information (including name and release date), and artist information. We also grabbed the Spotify's popularity metric for both the song and the artist, which we will later use in conjunction with the This Is My Jam number of likes metric to have a more accurate calculation of a song's popularity trend.
 
-# Header 1
-## Header 2
-### Header 3
+An ER diagram representing our database schema can be found below.
 
-- Bulleted
-- List
+![Image](http://i.imgur.com/j2LDHX0.png)
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+### Challenges
 
-[Link](url) and ![Image](src)
-```
+We had difficulty grabbing song information using Spotify's API. The main issue came from working around Spotify's rate limit for requests. For every song in our database, we needed to make a request to Spotify's API for more data. Unfortunately, their track endpoint only contained basic information for the song's album and artist (excluded genre for the album, release dates, popularity metrics, etc.) We then had to make two additional requests per song to get more information about the album and artist related to the song. To work around Spotify's API rate limiting, we added delays per request, which made the process of gathering data for all 1.4 millions songs take over several hours to complete.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Looking Forward
 
-### Jekyll Themes
+We plan on modifying our database to include audio features for each song. Spotify's API contains additional information for a song, including metrics suchs as 'danceability', 'energy', 'liveness', etc., and this information could be used in calculating a song's popularit trend. An updated ER diagram representing our new database schema can be found below.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/wtruong02151/cs1951_final_project_blogs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+![Image](src)
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Our next step is to create our Web App using D3 to visualize our data. This way, we can see trends develop.
