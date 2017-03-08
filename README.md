@@ -13,7 +13,7 @@ In the past week, we created our database of song and jam information.  We start
 
 An ER diagram representing our database schema can be found below.
 
-![Image](http://i.imgur.com/j2LDHX0.png)
+![Image](http://i.imgur.com/fpruJbx.png)
 
 
 ### Challenges
@@ -24,6 +24,6 @@ We had difficulty grabbing song information using Spotify's API. The main issue 
 
 We plan on modifying our database to include audio features for each song. Spotify's API contains additional information for a song, including metrics suchs as 'danceability', 'energy', 'liveness', etc., and this information could be used in calculating a song's popularit trend. An updated ER diagram representing our new database schema can be found below.
 
-![Image](src)
+![Image](http://i.imgur.com/H2Oz5ST.png)
 
 Our next step is to create our Web App using D3 to visualize our data. This way, we can see trends develop.
