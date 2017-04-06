@@ -55,14 +55,13 @@
 										to populate a line graph that graphs the number of jams and their likes by the jam's creation date.
 									</p>
 									
-									<p><img src="../images/halo_jamlikes.png" alt="Halo by Beyonce" height="500px" width="800px"></p>
-									<p><img src="../images/happy_jamlikes.png" alt="Happy by Pharrell Williams" height="500px" width="800px"></p>
+									<p><img src="../images/halo_jamlikes.png" alt="Original Schema" height="500px" width="600px"></p>
+									<p><img src="../images/happy_jamlikes.png" alt="Original Schema" height="500px" width="600px"></p>
 									
 									<p>
 										Above are two visualizations of our data for two popular songs: Halo by Beyonce and Happy by Pharrell Williams. 
 										We can see that Happy had a spike in popularity initially when it was first release (November 21st, 2013), and then 
-										once more near the beginning of 2015. A reasonable assumption is that the song could have regained popularity due to 
-										the holiday season and the message the song conveys.
+										once more near the beginning of 2015. A reasonable assumption 
 									</p>
 
 									<hr class="major" />
@@ -72,17 +71,25 @@
 									<hr class="major" />
 
 									<h2>Challenges</h2>
-									<p>
+									<p> 
+										Ultimately, our classifier failed to correctly classify our data, due to the skewed nature of our Spotify popularity metric.
+										The number itself is not well defined by the Spotify and is influenced by the number of listens by Spotify users. Our goals for 
+										this project were to use Spotify popularity as a comparison to our This Is My Jam data, not as our main indicator of popularity.
+										<br>
+										The main reason we had used Spotify popularity is due to issues with how our initial data pruning of our This Is My Jam dataset. Due
+										to the nature of the data (having songs rely on user input to match with a Spotify URI), a lot of our jam posts did not have a URI. 
+										Thus posts on certain songs would not be counted in our likes metric and would lead to uninteresting results for various artists and songs
+										where users would give incorrect and slightly modified spellings. 
+	
 										
 									</p>
 
 									<hr class="major" />
 
 									<h2>Looking Forward</h2>
-									<p>
-										
-									</p>
-
+									<p>We plan on modifying our database to include audio features for each song. Spotify's API contains additional information for a song, including metrics suchs as 'danceability', 'energy', 'liveness', etc., and this information could be used in calculating a song's popularit trend. An updated ER diagram representing our new database schema can be found below.</p>
+									<p><img src="../images/H2Oz5ST.png" alt="Revised Schema" height="500px" width="800px"></p>
+									<p>Our next step is to create our Web App using D3 to visualize our data. This way, we can see trends develop.</p>
 
 								</section>
 
