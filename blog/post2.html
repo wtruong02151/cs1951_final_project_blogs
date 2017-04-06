@@ -41,7 +41,7 @@
 										<h1>Post 2</h1>
 									</header>
 
-									<span class="image main"><img src="../images/drake_2.jpg" alt="Drake" /></span>
+									<span class="image main"><img src="../images/drake.jpg" alt="Drake" /></span>
 									
 									<hr class="major" />
 
@@ -55,14 +55,13 @@
 										to populate a line graph that graphs the number of jams and their likes by the jam's creation date.
 									</p>
 									
-									<p><img src="../images/halo_jamlikes.png" alt="Halo by Beyonce" height="500px" width="900px"></p>
-									<p><img src="../images/happy_jamlikes.png" alt="Happy by Pharrell Williams" height="500px" width="900px"></p>
+									<p><img src="../images/halo_jamlikes.png" alt="Original Schema" height="500px" width="600px"></p>
+									<p><img src="../images/happy_jamlikes.png" alt="Original Schema" height="500px" width="600px"></p>
 									
 									<p>
 										Above are two visualizations of our data for two popular songs: Halo by Beyonce and Happy by Pharrell Williams. 
 										We can see that Happy had a spike in popularity initially when it was first release (November 21st, 2013), and then 
-										once more near the beginning of 2015. A reasonable assumption is that the song could have regained popularity due to 
-										the holiday season and the message the song conveys.
+										once more near the beginning of 2015. A reasonable assumption 
 									</p>
 
 									<hr class="major" />
@@ -70,6 +69,8 @@
 									<h2>Machine Learning</h2>
 									
 									<hr class="major" />
+									<p>For the machine learning part, we used a LogisticRegression classifier. For the features we used acousticness, danceability, energy,
+                    instrumentalness, loudness, mode, speechiness, tempo, valence, liveness from our database. We believe these values would be in correlation with our label-spotify_song_popularity. We also do a 10-fold cross validation so that we don't overfit our training data. However, our numbers were not very promising. We got 42.5% accuracy for the training data and 40% for the test data. We believe this is because of two things. Firstly, most of the values for song popularity we have are 0's. This, and the fact that we don't know how spotify comes up with these values suggest that we should look at creating our own metric for popularity. We will be using the number of likes instead. Secondly, we are using a subset of our data for training and we intend to train our classifier on a larger subset.
 
 									<h2>Challenges</h2>
 									<p>
@@ -79,12 +80,9 @@
 									<hr class="major" />
 
 									<h2>Looking Forward</h2>
-									
-									<p>
-										
-										
-									</p>
-
+									<p>We plan on modifying our database to include audio features for each song. Spotify's API contains additional information for a song, including metrics suchs as 'danceability', 'energy', 'liveness', etc., and this information could be used in calculating a song's popularit trend. An updated ER diagram representing our new database schema can be found below.</p>
+									<p><img src="../images/H2Oz5ST.png" alt="Revised Schema" height="500px" width="800px"></p>
+									<p>Our next step is to create our Web App using D3 to visualize our data. This way, we can see trends develop.</p>
 
 								</section>
 
