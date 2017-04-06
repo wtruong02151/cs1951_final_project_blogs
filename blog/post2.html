@@ -69,7 +69,7 @@
 									<h2>Machine Learning</h2>
 									
 									<hr class="major" />
-									<p>For the machine learning part, we used a LogisticRegression classifier. For the features we used acousticness, danceability, energy,
+									<p>We used a LogisticRegression classifier. For the features we used acousticness, danceability, energy,
                     instrumentalness, loudness, mode, speechiness, tempo, valence, liveness from our database. We believe these values would be in correlation with our label-spotify_song_popularity. We also do a 10-fold cross validation so that we don't overfit our training data. However, our numbers were not very promising. We got 42.5% accuracy for the training data and 40% for the test data. We believe this is because of two things. Firstly, most of the values for song popularity we have are 0's. This, and the fact that we don't know how spotify comes up with these values suggest that we should look at creating our own metric for popularity. We will be using the number of likes instead. Secondly, we are using a subset of our data for training and we intend to train our classifier on a larger subset.
 
 									<h2>Challenges</h2>
