@@ -38,29 +38,42 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Post 1</h1>
+										<h1>Post 2</h1>
 									</header>
 
 									<span class="image main"><img src="../images/drake.jpg" alt="Drake" /></span>
+									
+									<hr class="major" />
 
-									<p>For this project, we are looking to find trends in song popularity using data gathered from streaming music services. We want to see when popular songs begin to lose appeal after gaining traction. We will be creating a web application that visualizes a song’s rise in popularity over time and how quickly songs decay. We can then allow users to search by specific songs, artists, or genres.</p>
+									<h2>Visualizations</h2>
+									
+									<p>
+										We used D3 for our data visualizations with the database of songs and jams that we created. 
+										To start off, we wrote a query that grabs all jams and the number of likes for each jam associated 
+										with a particular song. Currently, our web app provides a simple UI for users to search for a song 
+										by name. Our backend that queries our database for the given song and sends data to our front end 
+										to populate a line graph that graphs the number of jams and their likes by the jam's creation date.
+									</p>
+									
+									<p><img src="../images/halo_jamlikes.png" alt="Original Schema" height="500px" width="600px"></p>
+									<p><img src="../images/happy_jamlikes.png" alt="Original Schema" height="500px" width="600px"></p>
+									
+									<p>
+										Above are two visualizations of our data for two popular songs: Halo by Beyonce and Happy by Pharrell Williams. 
+										We can see that Happy had a spike in popularity initially when it was first release (November 21st, 2013), and then 
+										once more near the beginning of 2015. A reasonable assumption 
+									</p>
 
 									<hr class="major" />
 
-									<h2>Data</h2>
-									<p>We are using Spotify's API in conjunction with a dataset from This Is My jam, which was a social media music web site that allowed users to post links to songs they liked listening to on their profiles. These posts are called 'jams'. The dataset from This Is My Jam contains information pertaining to the song tied to a user's jam, including the song name, artist, link to the song, and the song's URI for Spotify's API. The dataset also included when the jam was posted, who it was posted by, how many users liked the post, and the number of followers a user has.</p>
-
-									<hr class="major" />
-
-									<h2>Progress</h2>
-									<p>In the past week, we created our database of song and jam information.  We started with the This Is My Jam dataset, and cleaned the data to only include songs tied to a Spotify URI, which gave us approximately 1.5 million songs to work with. From there, we extracted more information about each song using Spotify's API. The information we gathered includes the song's genres, album information (including name and release date), and artist information. We also grabbed the Spotify's popularity metric for both the song and the artist, which we will later use in conjunction with the This Is My Jam number of likes metric to have a more accurate calculation of a song's popularity trend.</p>
-									<p>An ER diagram representing our database schema can be found below.</p>
-									<p><img src="../images/fpruJbx.png" alt="Original Schema" height="500px" width="600px"></p>
-
+									<h2>Machine Learning</h2>
+									
 									<hr class="major" />
 
 									<h2>Challenges</h2>
-									<p>We had some difficulty grabbing song information using Spotify's API. The main issue came from working around Spotify's rate limit for requests. For every song in our database, we needed to make a request to Spotify's API for more data. Unfortunately, their track endpoint only contained basic information for the song's album and artist (excluded genre for the album, release dates, popularity metrics, etc.) We then had to make two additional requests per song to get more information about the album and artist related to the song. To work around Spotify's API rate limiting, we added delays per request, which made the process of gathering data for all 1.5 millions songs take over several hours to complete.</p>
+									<p>
+										
+									</p>
 
 									<hr class="major" />
 
