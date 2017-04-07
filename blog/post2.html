@@ -73,17 +73,18 @@
                     instrumentalness, loudness, mode, speechiness, tempo, valence, liveness from our database. We believe these values would be in correlation with our label-spotify_song_popularity. We also do a 10-fold cross validation so that we don't overfit our training data. However, our numbers were not very promising. We got 42.5% accuracy for the training data and 40% for the test data. We believe this is because of two things. Firstly, most of the values for song popularity we have are 0's. This, and the fact that we don't know how spotify comes up with these values suggest that we should look at creating our own metric for popularity. We will be using the number of likes instead. Secondly, we are using a subset of our data for training and we intend to train our classifier on a larger subset.
 
 									<h2>Challenges</h2>
-									<p>
+									<p> 
+										Ultimately, our classifier failed to correctly classify our data, due to the skewed nature of our Spotify popularity metric.
+										The number itself is not well defined by the Spotify and is influenced by the number of listens by Spotify users. Our goals for 
+										this project were to use Spotify popularity as a comparison to our This Is My Jam data, not as our main indicator of popularity.
+										<br>
+										The main reason we had used Spotify popularity is due to issues with how our initial data pruning of our This Is My Jam dataset. Due
+										to the nature of the data (having songs rely on user input to match with a Spotify URI), a lot of our jam posts did not have a URI. 
+										Thus posts on certain songs would not be counted in our likes metric and would lead to uninteresting results for various artists and songs
+										where users would give incorrect and slightly modified spellings. 
+	
 										
 									</p>
-
-									<hr class="major" />
-
-									<h2>Looking Forward</h2>
-									<p>We plan on modifying our database to include audio features for each song. Spotify's API contains additional information for a song, including metrics suchs as 'danceability', 'energy', 'liveness', etc., and this information could be used in calculating a song's popularit trend. An updated ER diagram representing our new database schema can be found below.</p>
-									<p><img src="../images/H2Oz5ST.png" alt="Revised Schema" height="500px" width="800px"></p>
-									<p>Our next step is to create our Web App using D3 to visualize our data. This way, we can see trends develop.</p>
-
 								</section>
 
 						</div>
