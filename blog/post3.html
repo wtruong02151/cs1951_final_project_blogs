@@ -42,10 +42,42 @@
 										<h1>Post 3</h1>
 									</header>
 
-									<span class="image main"><img src="../images/drake_2.jpg" alt="Drake" /></span>
+									<span class="image main"><img src="../images/drake.jpg" alt="Drake" /></span>
 									
 									<hr class="major" />
-
+								
+									
+									<h2>Data</h2>
+									
+									<p>
+										In our previous blog post, we noted a few issues that arose with our data. More specifically, we realized that
+										with our initial data pruning of the This Is My Jam dataset, we cut out a lot of jams tied to a song. This drastically 
+										reduced the number of jams/likes a song would get, which lead to lackluster results with our machine learning attempts.
+										
+										We decided to use a different database called the Million Song Dataset which is a collection of audio features 
+										and metadata for a million popular music tracks. Each of these songs has a 'hotness' level tied to it, similar 
+										to the popularity metric of a song on Spotify. We decided to use this database since the songs from the This Is My Jams 
+										dataset were fairly niche. 
+										
+									</p>
+									
+									<hr class="major" />
+									<h2>Readjusting Our Goal</h2>
+									<p>
+										We are no longer trying to measure a song's popularity lifespan with the This Is My Jam dataset. Instead, 
+										we are looking to classify song popularity based on their audio features from the Million Song Dataset. These 
+										features include a song's danceability, loudness, key, etc. We've categorized songs with a hotness metric of 60 or greater 
+										as popular. Any song with a hotness metric below that threshold is considered unpopular. 
+										
+										With this new approach, we managed to get an accuracy rate of 82% on a simply binary classification (popular vs not popular) based on audio features. 
+										We then decided to split the popularity classifaction into four different categories based on a four-way division of 
+										their hotness values (0-25: very unpopular, 25-50: unpopular, 50-75: popular, 75-100: very popular). Our accuracy rate 
+										dropped to 40%, but we plan on including more audio features to potentially increase our accuracy rate.
+										
+										For our web app, we are looking to implement a functionality in which users can search for a song on Spotify and have 
+										its audio features be fed into our machine learning algorithm to classify its popularity.
+										
+									</p>
 								</section>
 
 						</div>
