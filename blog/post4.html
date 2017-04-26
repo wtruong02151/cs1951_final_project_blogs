@@ -7,7 +7,7 @@
 -->
 <html>
 	<head>
-		<title>Blog Post 3</title>
+		<title>Blog Post 4</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="../assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -39,50 +39,39 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Post 3</h1>
+										<h1>Post 4</h1>
 									</header>
 
 									<span class="image main"><img src="../images/drake.jpg" alt="Drake" /></span>
 									
-									<hr class="major" />
-								
-									
-									<h2>Data</h2>
+									<hr class="major" />	
+									<h2>Insights</h2>
 									
 									<p>
-										In our previous blog post, we noted a few issues that arose with our data. More specifically, we realized that
-										with our initial data pruning of the This Is My Jam dataset, we cut out a lot of jams tied to a song. This drastically 
-										reduced the number of jams/likes a song would get, which lead to lackluster results with our machine learning attempts.
-										
-										We decided to use a different database called the Million Song Dataset which is a collection of audio features 
-										and metadata for a million popular music tracks. Each of these songs has a 'hotness' level tied to it, similar 
-										to the popularity metric of a song on Spotify. We decided to use this database since the songs from the This Is My Jams 
-										dataset were fairly niche. 
-										
+										One of our questions we want to answer when looking at audio features of a song is which one of these many features really pushes a song to be popular? 
+										So far we have a working classifier that accurately classifies a song from our dataset as popular or unpopular with about 87% success. Now we are going 
+										to dive into each feature in our feature set and examine how our classifier weighs each of their relevance. Hopefully we find something interesting to learn 
+										from this. As of now, we predict that genre, loudness, and tempo will probably have larger influence than some of the more subtle features like acousticness 
+										and mean segment timbre (the average timbre of a song which in and of itself is hard to quantify.) Once we have more analysis, we will package our insights 
+										into a nice format to present as users try out our classification for their own songs.
 									</p>
 									
 									<hr class="major" />
-									<h2>Readjusting Our Goal</h2>
+									<h2>Visualizations</h2>
 									<p>
-										We are no longer trying to classify/predict a song's popularity lifespan using date-based data from the This Is My Jam dataset. Instead, 
-										we are looking to classify a song's popularity using audio features (e.g. danceability, loudness, key, etc.) from the Million Song Dataset.
-
-										The first step we've taken to test the viability of the approach was by labeling the songs into two categories: with a '1' if the song is popular and with a '2' if the song is unpopular. We determined these labels with a strict cutoff: if the song has a hotness metric of 60 or greater, it is labeled as popular; else, not popular.
-										
-										With this new approach, we managed to get an accuracy rate of 82% on a simply binary classification (popular vs not popular) based on audio features.
-
-										We then hypothesized that by further classifying song popularity into four different categories would yield improved accuracy values. We tested this hypothesis based on a four-way division of hotness values:
-										<ul>
-											<li>0-25: very unpopular,</li>
-											<li>25-50: unpopular,</li>
-											<li>50-75: popular,</li>
-											<li>75-100: very popular.</li>
-										</ul>
-										However, our accuracy rate 
-										instead dropped to 40%. However, we believe that further fine-tuning and adjusting our methodology may still yield better results. For one, adding more audio features may improve results. Another way to improve results may be by choosing our hotness categories more 'intelligently' (i.e. rather than creating a category for every 100/n 'hotness' points, where n is the number of categories, we might instead choose some more thoughtful criteria to label a song).
-										
-										Finally, for our web app, we are looking to implement a functionality in which users can search for a song on Spotify and have 
-										its audio features be fed into our machine learning algorithm to classify its popularity.
+										One new visualization that we wanted to create was some way to view genre development over time. Genres’ relevance can change drastically in even short 
+										periods of time (does dub step still have the same appeal as it did in 2010?). Having a cool visualization to showcase changing views on genre would 
+										add to our web application as a nice side piece. So we decided to create a visualization that creates wordles for relevant genres for specific year ranges. 
+										A user will be able to slide the year range that defines the wordle to see different results. Here’s an example of it in use:
+									</p>
+									
+									<hr class="major" />
+									<h2>Finishing Up</h2>
+									<p>
+										Now that we have some components of our project coming together, it’s time to wrap up what we’ve learned and package our 
+										project together in a nice web app. We have working classifiers in our python scripts that our node.js application will need 
+										to call. Additionally, we will have to incorporate our Spotify API searches in order for users to test our classifier themselves
+										and then present the audio features of song lookups in order for people to see why their song may or may not have been considered “popular.”
 									</p>
 								</section>
 
@@ -110,6 +99,7 @@
 										<li><a href="post1.html">Blog Post 1 (March 8)</a></li>
 										<li><a href="post2.html">Blog Post 2 (April 6)</a></li>
 										<li><a href="post3.html">Blog Post 3 (April 12)</a></li>
+										<li><a href="post4.html">Blog Post 4 (April 25)</a></li>
 										<!-- <li><a href="elements.html">Elements</a></li>
 										<li>
 											<span class="opener">Submenu</span>
