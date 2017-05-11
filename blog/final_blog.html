@@ -45,12 +45,27 @@
 
 									<span class="image main"><img src="../images/drake.jpg" alt="Drake" /></span>
 									<p>
-										One of our questions we want to answer when looking at audio features of a song is which one of these many features really pushes a song to be popular? 
-										So far we have a working classifier that accurately classifies a song from our dataset as popular or unpopular with about 87% success. Now we are going 
-										to dive into each feature in our feature set and examine how our classifier weighs each of their relevance. Hopefully we find something interesting to learn 
-										from this. As of now, we predict that genre, loudness, and tempo will probably have larger influence than some of the more subtle features like acousticness 
-										and mean segment timbre (the average timbre of a song which in and of itself is hard to quantify.) Once we have more analysis, we will package our insights 
-										into a nice format to present as users try out our classification for their own songs.
+										Our goal for this project was to see if certain audio features of a song could determine 
+										the song's popularity amongst listeners. We wanted to identify any sort of correlations between 
+										particular audio features, such as key, tempo, danceability, etc., and a song's popularity metric.
+										
+										This data was gathered from the 1 Million Song dataset. We cut down the songs to use to 35,000, and ensured 
+										that certain features such as song popularity, tempo, etc. existed to ensure a clean database. 
+
+										In order to test whether or not our metadata for songs can lead to predictions about potential popularity, 
+										we decided to use three different classifiers. We utilized two support vector machines: one with a linear, 
+										the other with a gaussian and Logistic Regression in an attempt to find linear relationships with features and
+										song popularity. Our main class of features that our classifier utilized include loudness2 , artist
+										hotness (read popularity), artist familiarity tempo, key, tempo * key (often switched to tempo * mode),
+										mean segment pitch, mean segment timbre, mode, duration, and genre tags.
+										
+										The results of our experiment in classifying popular music ultimately lead to the conclusion that metadata 
+										defining tracks does not offer a reliable way to determine how popular a song could be. Rather outside 
+										factors such as the existing popularity of an artist have higher influence on the potential popularity 
+										of an artist. Additionally, the averages of harder to quantify values like timbre can lose a lot of the 
+										uniqueness that define songs. Thus the metadata given has limitations in describing and defining different 
+										songs which can fall on the unpopular or popular side of classification.
+ 
 									</p>
 								</section>
 
